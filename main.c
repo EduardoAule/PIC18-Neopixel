@@ -46,7 +46,6 @@ void main() {
     setup_timer_1( T1_INTERNAL | T1_DIV_BY_8 );
     //enable_interrupts (INT_RDA);
     enable_interrupts(GLOBAL);
-
     
     putc('E');
     output_high(PIN_E0); delay_ms(300);
