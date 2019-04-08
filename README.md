@@ -1,1 +1,1 @@
-# PIC18-Neopixel
+# PIC18F4550 + Neopixel + CCS Compiler
