@@ -3,9 +3,7 @@ void interrupcion_ext()
 {
     RE0 = ~RE0;
     RA5 = !RA5;
-    //output_toggle(PIN_E0);
-    //output_toggle(PIN_A5);
-    //putc('l');
+
     light = !light;
     mode ++;
     flag_btn = TRUE;
@@ -25,7 +23,7 @@ void interrupcion_ext1()
 }
 
 #int_rda 
-void rda_isr(void)//función de interrupción por recepción de datos USART               
+void rda_isr(void)//funciÃ³n de interrupciÃ³n por recepciÃ³n de datos USART               
 { 
    if(kbhit()) //verifica si hay datos en buffer
    {
