@@ -5,25 +5,12 @@
 #INCLUDE <STDLIB.H>
 #fuses HSPLL,MCLR,NOWDT,NOPROTECT,NOBROWNOUT,PBADEN,NODEBUG,NOLVP,NOVREGEN,USBDIV,PLL3,CPUDIV1
 #fuses PUT,NOIESO,NOFCMEN
-//#fuses HSPLL,MCLR,NOWDT,NOPROTECT,NODEBUG,USBDIV,PLL2,CPUDIV1,VREGEN,NOLVP,NOPBADEN,NOBROWNOUT
-//#fuses HS,NOWDT,NOPROTECT,NOPUT,NOBROWNOUT,NOPBADEN,NOLVP,NOCPD,NODEBUG,NOWRT,NOVREGEN
-//#fuses XT,MCLR,NOWDT,NOPROTECT,NOPUT,NOBROWNOUT,NOPBADEN,NOLVP,NOCPD,NODEBUG,NOWRT,NOVREGEN
-//#use delay(clock=4MHz,crystal=4MHz)
+
 #use delay(clock=48MHz,crystal=12MHz)
-//#use rs232(baud=9600,parity=N,xmit=None,rcv=None,bits=8,stream=PORT1)
 #use rs232(uart1, baud=9600)
-//#use FAST_IO(ALL)
-//#use fast_io(B)
 #use fast_io(D)
 #use fast_io(E)
-//#priority timer1,rda //first timer1 IRQ
-/* #use fast_io(a)
-By default the compiler is set to 'standard_io' mode.
-In standard_io mode, the instruction:
-output_a(0x00); 
-sets the _whole_ of portA as outputs. sin importa el set_tris_x() */
-//FOR NEOPIXELS type GRB
-//#define NEOPIN PIN_E2
+
 #define NUM_PIXELS 36
 
 #include "ioports.h"
@@ -33,31 +20,22 @@ sets the _whole_ of portA as outputs. sin importa el set_tris_x() */
 #include "fun_arrays.c"
 #include "functions.c"
 #include "fun_NeoPixels.c"
-//clear(set to 0) si se usa PBADEN con INT_EXT y resistencia a PULL_UP sin
-//importar si es H2L o L2H, sino este Flag bit se pondra a 1.
-//como si alguien dispara la INT
+
 #bit INT0IF_BIT = 0xFF2.1	//(INTCON)INT0IF: INT0 External Interrupt Flag bit
 #bit INT0IE_BIT = 0xFF2.4
 
 void main() {
    	
-	output_a(0x00);
+    output_a(0x00);
     output_b(0x00);
     output_d(0x00);
     output_e(0x00);
-    //si hay que inicializar, por que tiene un comportamiento raro
-    //al inicio a veces estan en ON, otras a off,
-    //a veces parece que guardan el estado anterior
-    //no inicialice, aunque deberia
+
     set_tris_b(0x03); //INT_EXT0 y 1 // 0x44 SPI
     set_tris_c(0x00); //RX
     set_tris_d(0x00); //
     set_tris_e(0x0);
     
-    //setup_adc_ports(AN0_TO_AN3 | VSS_VDD);
-    //setup_adc(ADC_CLOCK_INTERNAL);
-   //ext_int_edge (H_TO_L) ;
-   //enable_interrupts( int_EXT_H2L );	//int_EXT_H2L para RX.
 	if(INT0IE_BIT)
 		putc('I'); else putc('i');
 	INT0IF_BIT = 0;	//solo si se usa el FUSE PBADEN.
@@ -68,8 +46,7 @@ void main() {
     setup_timer_1( T1_INTERNAL | T1_DIV_BY_8 );
     //enable_interrupts (INT_RDA);
     enable_interrupts(GLOBAL);
-	//configurando puertos, A, B y D puertos como salida
-    //set_tris_a(0x00); //4 inputs for Analogics
+
     
     putc('E');
     output_high(PIN_E0); delay_ms(300);
@@ -82,7 +59,6 @@ void main() {
     //printf("sizeof of array rainbow[0]: %d\n", (int) sizeof(rainbow[0]));
     //iniciamos en color solido mode1
     flag_init = 1;
-    //while(TRUE);
     
     while (TRUE) {
         
