@@ -51,11 +51,11 @@ El segundo modo (btn2) es cambiar la intensidad o brillo general de los NEOPIXEL
 La animaciones de color son muy diversas, desde un efecto que simula un arbol navideño hasta un efecto prisma de colores.
 
 ## Codigo
-La parte esensial del proyecto es la libreria Neopixel.c, la cual se encarga de enviar los valores RGB a la tira
-de NEOPIXELS.
-Los colores estan repartidos en tres arrays NeoGreen[NeoPixel], NeoRed[NeoPixel] y NeoBlue[NeoPixel], setear un color
-a un NEOPIXEL significa asignar un valor en la misma posicion en esos tres arrays, la longitud de cada array es igual 
-a la cantidad de NEOPIXELS usados, el cual se define como:
+La parte esensial del proyecto es la libreria Neopixel.c, la cual se encarga de enviar los valores RGB a la tira de NEOPIXELS. 
+Los colores estan repartidos en tres arrays NeoGreen[NeoPixel], NeoRed[NeoPixel] y NeoBlue[NeoPixel], setear un color a un 
+NEOPIXEL significa separar el valor del color RGB, en R, G y B, y asignar cada uno en la misma posicion en esos tres 
+arrays, la longitud de cada array es igual a la cantidad de NEOPIXELS usados, el cual se define como:
+
 
     #define NUM_PIXELS 36
     
