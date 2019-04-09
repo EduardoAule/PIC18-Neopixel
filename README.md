@@ -8,7 +8,7 @@ no es realmente tan complicado de implementar en otro microcontrolador.
 El proyecto cuenta con 36 NEOPIXELS, dos botones, uno para cambiar la animacion de colores y otro para controlar
 el brillo, permite ajustar el brillo en 5 niveles.
 Los NEOPIXELS estan ordenados en forma triangular (figura mas abajo).
-Los NEOPIXELS usados a pesar de que son RGB, el orden realmente de cada NEOPIXEL es GRB, tener cuidado como se envia estos
+Los NEOPIXELS usados a pesar de que son RGB, el orden realmente de cada NEOPIXEL es GRB, tener cuidado de como se envia estos
 valores a cada NEOPIXEL.
 
     Nota: Para cada NEOPIXEL se usan 3 bytes, un byte por cada color G, R, B.
