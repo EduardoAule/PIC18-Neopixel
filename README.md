@@ -44,6 +44,12 @@ El segundo boton (btn2), cambia el brillo general de los NEOPIXELS.
 
 ![alt text](https://github.com/EduardoAule/PIC18-Neopixel/blob/master/PIC18_Neopixels.png)
 
+## Funcionamiento
+Basicamente hay dos modos de operacion, el primero es realizado por el boton (btn1), el cual muestra diversos efectos de colores
+sobre el arreglo piramidal de los leds NEOPIXELS (animaciones de color).
+El segundo modo (btn2) es cambiar la intensidad o brillo general de los NEOPIXEL, variando hasta 5 niveles de intensidad.
+La animaciones de color son muy diversas, desde un efecto que simula un arbol navideño hasta un efecto prisma de colores.
+
 ## Codigo
 La parte esensial del proyecto es la libreria Neopixel.c, la cual se encarga de enviar los valores RGB a la tira
 de NEOPIXELS.
