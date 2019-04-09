@@ -68,8 +68,10 @@ La funcion:
     
     void NeoBit (int1 Bit)
     
-se encarga de generar el "protocolo" poniendo un pin del PIC en estado alto o bajo de acuerdo al protocolo del chip WS2812B,
-en este caso se escribe al puerto de forma directa, pin_E2 es el pin de datos usados para la tira de NEOPIXELS.
+esta funcion es llamada dentro de NeoDraw(), se encarga de generar el "protocolo" poniendo un pin del PIC en estado alto o bajo
+de acuerdo al protocolo del chip WS2812B, en este caso se escribe al puerto de forma directa, pin_E2 es el pin de datos usados 
+para la tira de NEOPIXELS.
+
 
     #bit RE2=0xf84.2
     
@@ -142,11 +144,11 @@ The second mode (btn2) is to change the intensity or general brightness of the N
 The animations of color are very diverse, from an effect that simulates a Christmas tree to a prism effect of colors.
 
 ## Code
-The essential part of the project is the Neopixel.c library, which is responsible for sending the RGB values ​​to the strip
-of NEOPIXELS.
-The colors are divided into three arrays NeoGreen [NeoPixel], NeoRed [NeoPixel] and NeoBlue [NeoPixel], set a color
-a NEOPIXEL means assigning a value in the same position in those three arrays, the length of each array is equal
-to the amount of NEOPIXELS used, which is defined as:
+The essential part of the project is the Neopixel.c library, which is responsible for sending the RGB values to the NEOPIXELS 
+strip.
+The colors are divided into three arrays NeoGreen [NeoPixel], NeoRed [NeoPixel] and NeoBlue [NeoPixel], set a color to a
+NEOPIXEL means separating the value of the RGB color, in R, G and B, and assigning each one in the same position in those three
+arrays, the length of each array is equal to the amount of NEOPIXELS used, which is defined as:
 
     #define NUM_PIXELS 36
     
@@ -159,8 +161,9 @@ The function:
     
     void NeoBit (int1 Bit)
     
-is responsible for generating the "protocol" by placing a PIC pin in high or low state according to the protocol of 
-the WS2812B chip, in this case, the port is written directly, pin_E2 is the data pin used for the NEOPIXELS strip.
+this function is called within NeoDraw (), it is responsible for generating the "protocol" by placing a PIC pin in high or low 
+status according to the protocol of the WS2812B chip, in this case it is written to the port directly, pin_E2 is the data pin 
+used for the NEOPIXELS strip.
 
     #bit RE2 = 0xf84.2
     
