@@ -135,6 +135,12 @@ The second button (btn2), changes the general brightness of the NEOPIXELS.
 
 ! [alt text] (https://github.com/EduardoAule/PIC18-Neopixel/blob/master/PIC18_Neopixels.png)
 
+## Operation
+Basically there are two modes of operation, the first is done by the button (btn1), which shows various colors effects
+on the pyramidal arrangement of NEOPIXELS LEDs (color animations).
+The second mode (btn2) is to change the intensity or general brightness of the NEOPIXEL, varying up to 5 intensity levels.
+The animations of color are very diverse, from an effect that simulates a Christmas tree to a prism effect of colors.
+
 ## Code
 The essential part of the project is the Neopixel.c library, which is responsible for sending the RGB values ​​to the strip
 of NEOPIXELS.
