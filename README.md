@@ -42,7 +42,7 @@ Fuente de Alimetacion.
 Se utilizan dos botones PULL-DOWN, el primer boton (btn1), cambia el modo de colores en los leds.
 El segundo boton (btn2), cambia el brillo general de los NEOPIXELS.
 
-![alt text](https://github.com/EduardoAule/PIC18-Neopixel/blob/master/PIC18_Neopixels.png)
+![pic_neo](PIC18_Neopixels.png?raw=true "PICNEO image")
 
 ## Funcionamiento
 Basicamente hay dos modos de operacion, el primero es realizado por el boton (btn1), el cual muestra diversos efectos de colores
@@ -135,7 +135,7 @@ Source of Alimetacion.
 Two PULL-DOWN buttons are used, the first button (btn1), changes the color mode in the LEDs.
 The second button (btn2), changes the general brightness of the NEOPIXELS.
 
-![alt text](https://github.com/EduardoAule/PIC18-Neopixel/blob/master/PIC18_Neopixels.png)
+![pic_neo](PIC18_Neopixels.png?raw=true "PICNEO image")
 
 ## Operation
 Basically there are two modes of operation, the first is done by the button (btn1), which shows various colors effects
